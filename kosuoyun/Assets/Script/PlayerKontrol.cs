@@ -28,7 +28,6 @@ public class PlayerKontrol : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        
     }
 
     
