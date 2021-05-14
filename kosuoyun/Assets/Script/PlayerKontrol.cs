@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class PlayerKontrol : MonoBehaviour
 {
+    //animasyon
+    public Animator anim;
+    public bool Jump;
+
+    
     //Movement
     CharacterController controller;
     public float hiz = 0.1f;
     float nereye;
     int slot = 0;
    
-
+    
     /// sol taraf slot = -1;
     /// orta taraf slot = 0
     /// sað taraf slot = 1
@@ -28,17 +33,21 @@ public class PlayerKontrol : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
+        Jump = false;
     }
-
+    
     
     void Update()
     {
+        Animasyonkontrolleri();
+
         #region Move
         //float horizontal = Input.GetAxisRaw("Horizontal");
         //Vector3 move = transform.right * horizontal * Time.deltaTime * hiz;
         //controller.Move(move);
 
-
+        
         //GetComponent<Rigidbody>().velocity = new Vector3(nereye,0f,0f);
 
         Vector3 move;
@@ -68,12 +77,15 @@ public class PlayerKontrol : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && isGround)
         {
             velocity.y += Mathf.Sqrt(ZiplamaYuksekligi * -3.0f * gravity);
+            Jump = true;
         }
 
         isGround = Physics.CheckSphere(ground.position, distance, mask);
         if(isGround && velocity.y < 0)
         {
             velocity.y = 0f;
+            Jump = false;
+
         }
 
         velocity.y += gravity * Time.deltaTime;
@@ -84,7 +96,19 @@ public class PlayerKontrol : MonoBehaviour
 
 
        
+        
+    }
+    public void Animasyonkontrolleri()
+    {
+        if (Jump)
+        {
+            anim.SetBool("Jump", true);
 
+        }
+        else
+        {
+            anim.SetBool("Jump", false);
+        }
     }
 
     
