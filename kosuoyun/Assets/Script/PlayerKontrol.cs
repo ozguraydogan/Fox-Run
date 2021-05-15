@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class PlayerKontrol : MonoBehaviour
 {
+
+    //yol
+
+    public GameObject yol;
+    Vector3 yon;
+
+    public Transform yol1;
+    public Transform yol2;
+
+    
+
+
+
     //animasyon
     public Animator anim;
     public bool Jump;
@@ -35,9 +48,33 @@ public class PlayerKontrol : MonoBehaviour
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
         Jump = false;
+
+
     }
-    
-    
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == "SahneSonu")
+    //    {
+    //        Instantiate(yol,new Vector3(-10.53936f, 9.063419f, 52.2f),transform.rotation);
+
+
+    //    }   
+    //}
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "YolunSonu1")
+        {
+            yol2.position = new Vector3(yol1.position.x, yol1.position.y, yol1.position.z + 120.0f);
+        }
+        if (other.gameObject.name == "YolunSonu2")
+        {
+            yol1.position = new Vector3(yol2.position.x, yol2.position.y, yol2.position.z + 120.0f);
+        }
+    }
+
     void Update()
     {
         Animasyonkontrolleri();
@@ -110,6 +147,9 @@ public class PlayerKontrol : MonoBehaviour
             anim.SetBool("Jump", false);
         }
     }
+
+
+
 
     
 }
