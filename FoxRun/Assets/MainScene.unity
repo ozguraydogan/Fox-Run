@@ -155,10 +155,10 @@ RectTransform:
   m_Father: {fileID: 1827811687}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.80581325, y: 0.771}
-  m_AnchorMax: {x: 0.96700007, y: 0.9025262}
-  m_AnchoredPosition: {x: 73.6, y: 35.699997}
-  m_SizeDelta: {x: 1.5300007, y: -0.28699875}
+  m_AnchorMin: {x: 0.8475505, y: 0.822}
+  m_AnchorMax: {x: 0.97900003, y: 0.961}
+  m_AnchoredPosition: {x: -0.3999939, y: 0.79400635}
+  m_SizeDelta: {x: -24.551498, y: -11.287003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &101773205
 MonoBehaviour:
@@ -182,7 +182,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 57
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -300,10 +300,10 @@ RectTransform:
   m_Father: {fileID: 1827811687}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 440.6, y: 209}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0.776, y: 0.84543604}
+  m_AnchorMax: {x: 0.82024395, y: 0.9391667}
+  m_AnchoredPosition: {x: -1.781311, y: 0.12530518}
+  m_SizeDelta: {x: 32.709, y: 30.1734}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &128630286
 MonoBehaviour:
@@ -375,10 +375,10 @@ RectTransform:
   m_Father: {fileID: 1827811687}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -411.4, y: 217.7}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0.093, y: 0.8711241}
+  m_AnchorMax: {x: 0.21300001, y: 0.91800004}
+  m_AnchoredPosition: {x: -0.10003662, y: -0.30000305}
+  m_SizeDelta: {x: -35, y: -7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &128775733
 MonoBehaviour:
@@ -402,12 +402,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 15
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -698,7 +698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &337052943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1151,7 +1151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1477,6 +1477,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9062071662998514551, guid: a453bea6c37736e419ec0616e4948a6f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 74c0462b6a2d7294f850bdebc3728ba1, type: 2}
     - target: {fileID: 9062071663034613838, guid: a453bea6c37736e419ec0616e4948a6f, type: 3}
       propertyPath: m_Name
       value: Yol2
