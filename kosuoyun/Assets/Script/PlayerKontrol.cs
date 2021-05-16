@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerKontrol : MonoBehaviour
 {
 
-    //yol
 
-    public GameObject yol;
-    Vector3 yon;
 
     public Transform yol1;
     public Transform yol2;
-
+    public Text can;
     
 
 
@@ -41,7 +39,7 @@ public class PlayerKontrol : MonoBehaviour
     float distance = 0.3f;
     Vector3 velocity;
     public LayerMask mask;
-   
+    int karakter_can = 100;
 
     void Start()
     {
@@ -73,10 +71,20 @@ public class PlayerKontrol : MonoBehaviour
         {
             yol1.position = new Vector3(yol2.position.x, yol2.position.y, yol2.position.z + 120.0f);
         }
+        if (other.gameObject.tag == "traps")
+        {
+            karakter_can -= 50;
+            can.text = karakter_can.ToString();
+            if (karakter_can<10)
+            {
+                Time.timeScale=0.001f;
+            }
+        }
     }
 
     void Update()
     {
+       
         Animasyonkontrolleri();
 
         #region Move
