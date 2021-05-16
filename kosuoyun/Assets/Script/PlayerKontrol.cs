@@ -7,13 +7,15 @@ public class PlayerKontrol : MonoBehaviour
 {
 
 
-
+    // yol 
     public Transform yol1;
     public Transform yol2;
+
+    //ui
     public Text can;
-    
-
-
+    public Text Score;
+    public GameObject panel;
+    public Text TotalScore;
 
     //animasyon
     public Animator anim;
@@ -39,7 +41,10 @@ public class PlayerKontrol : MonoBehaviour
     float distance = 0.3f;
     Vector3 velocity;
     public LayerMask mask;
-    int karakter_can = 100;
+    int karakter_can = 3;
+
+    int Score_puan=0;
+    string Score_text;
 
     void Start()
     {
@@ -73,13 +78,26 @@ public class PlayerKontrol : MonoBehaviour
         }
         if (other.gameObject.tag == "traps")
         {
-            karakter_can -= 50;
+            karakter_can -= 1;
             can.text = karakter_can.ToString();
-            if (karakter_can<10)
+            if (karakter_can<1)
             {
                 Time.timeScale=0.001f;
+                panel.SetActive(true);
+                TotalScore.text = "Total Score: " + Score_puan.ToString();
             }
         }
+        
+        if (other.gameObject.tag =="Coin")
+        {
+            Score_puan += 20;
+
+            Score.text = "Score: " + Score_puan.ToString();
+
+            Destroy(other.gameObject);
+
+        }
+
     }
 
     void Update()
@@ -140,8 +158,8 @@ public class PlayerKontrol : MonoBehaviour
 
 
 
-       
-        
+
+
     }
     public void Animasyonkontrolleri()
     {
